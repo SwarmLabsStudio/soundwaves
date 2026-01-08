@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>40Hz Gamma Therapy - Sound Healing</title>
+    <meta name="description" content="Experience the therapeutic benefits of 40Hz gamma wave therapy with calming visuals and guided sound sessions up to one hour.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Canvas for Visuals -->
+    <canvas id="visualCanvas"></canvas>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="title">40Hz Gamma Therapy</h1>
+            <p class="subtitle">Therapeutic Sound & Light Experience</p>
+        </header>
+
+        <!-- Timer Display -->
+        <div class="timer-display">
+            <div class="time-text" id="timeDisplay">00:00</div>
+            <div class="session-info" id="sessionInfo">Select duration to begin</div>
+        </div>
+
+        <!-- Duration Selection -->
+        <div class="duration-selector" id="durationSelector">
+            <h3 class="selector-title">Choose Session Duration</h3>
+            <div class="duration-grid">
+                <button class="duration-btn" data-minutes="5">5 min</button>
+                <button class="duration-btn" data-minutes="10">10 min</button>
+                <button class="duration-btn" data-minutes="15">15 min</button>
+                <button class="duration-btn" data-minutes="20">20 min</button>
+                <button class="duration-btn" data-minutes="30">30 min</button>
+                <button class="duration-btn" data-minutes="45">45 min</button>
+                <button class="duration-btn" data-minutes="60">60 min</button>
+                <button class="duration-btn custom-btn" id="customBtn">Custom</button>
+            </div>
+            
+            <!-- Custom Duration Input -->
+            <div class="custom-input-container" id="customInputContainer">
+                <input 
+                    type="number" 
+                    id="customMinutes" 
+                    min="1" 
+                    max="60" 
+                    placeholder="Enter minutes (1-60)"
+                    class="custom-input"
+                >
+                <button class="start-custom-btn" id="startCustomBtn">Start Custom</button>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls" id="controls">
+            <button class="control-btn" id="playPauseBtn" aria-label="Play/Pause">
+                <svg class="icon play-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                </svg>
+                <svg class="icon pause-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="6" y="4" width="4" height="16"></rect>
+                    <rect x="14" y="4" width="4" height="16"></rect>
+                </svg>
+            </button>
+            
+            <button class="control-btn" id="stopBtn" aria-label="Stop">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="5" y="5" width="14" height="14"></rect>
+                </svg>
+            </button>
+
+            <!-- Volume Control -->
+            <div class="volume-control">
+                <svg class="icon volume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                </svg>
+                <input 
+                    type="range" 
+                    id="volumeSlider" 
+                    min="0" 
+                    max="100" 
+                    value="70" 
+                    class="volume-slider"
+                    aria-label="Volume"
+                >
+                <span class="volume-value" id="volumeValue">70%</span>
+            </div>
+        </div>
+
+        <!-- Info Section -->
+        <div class="info-section">
+            <button class="info-toggle" id="infoToggle">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                About 40Hz Therapy
+            </button>
+            
+            <div class="info-content hidden" id="infoContent">
+                <h3>What is 40Hz Gamma Therapy?</h3>
+                <p>Research suggests that 40Hz sound stimulation may help support brain health by promoting gamma wave activity. This frequency has been studied for its potential benefits in:</p>
+                <ul>
+                    <li>Enhancing cognitive function and focus</li>
+                    <li>Supporting healthy sleep patterns</li>
+                    <li>Promoting relaxation and stress reduction</li>
+                    <li>Potentially supporting brain health</li>
+                </ul>
+                <p class="disclaimer">This application is for wellness purposes only and is not intended to diagnose, treat, cure, or prevent any disease. Consult with a healthcare professional before beginning any new wellness routine.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
